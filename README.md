@@ -1,43 +1,21 @@
-# Motivation
+# Overview
 
-This project was borne out of the need to quickly spin up a new environment for authoring React + Redux components.
+This project provides automatic data binding to redux store for some common inputs. The inputs include choices from `react-bootstrap` and `react-widgets`.
 
-The hope is that you can essentially run `npm install && npm run development` and have a work panel with hot reloading for building your component interactively.
-
-`react`, `webpack`, and `redux` are all used. Running `npm run development` starts a webpack dev server, and you can get to work building out your component!
-
-When you're ready to run tests, you can run `npm test`.
-
-If you want to customize the project to point at your github / npm repo, after `npm install` just customize this readme, clear out git commits from this project:
+An example of data binding:
 
 ```
-rm -rf .git
-git init 
-git add .
+<Input type="text" action="text_update" dispatch={dispatch} value={sample.sample_text} />
 ```
 
-and run...
+All arguments not handled by the data binder are passed onto the input element. 
 
-```js
-PROJECT_NAME=foo-bar PROJECT_DESCRIPTION='A really cool project' GITHUB_USERNAME=foo AUTHOR_NAME="Calvin Froedge" AUTHOR_EMAIL=calvinfroedge@gmail.com npm run customize
-``` 
+This lib aims for input which have a viewing and editing state, so clicking / tapping on the element enters edit state and focuses on the field, and leaving focus blurs the field. All the parent needs to do is pass down a redux action to dispatch, and a value to render.
 
-# Important Commands
+The redux action dispatched will have the elements new value as its payload. It happens on blur for input elements, and on change for date elements.
 
-## `npm test`
+Work in progress! More inputs and tests coming soon.
 
-Run tests (files in test folder named `TESTNAME.spec.js`) using mocha / expect.
+# Playing around
 
-## `npm build`
-
-Builds for es, commonjs, umd. This is ignored in git, but will be included in npm package.
-
-## `npm run development`
-
-Starts the dev server. Go to `localhost:3000` to see your new component with live reload. You can pass `PORT` environment variable to customize this.
-
-# When you're ready to publish...
-
-Make sure you clean up the files you don't need! Here's a quick command:
-
-`rm .gitconfig .webpack.config.js .package.json`
+Clone, install, and run `npm run development` to use the input playground.

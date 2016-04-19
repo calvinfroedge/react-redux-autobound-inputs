@@ -12,7 +12,10 @@ var config = {
       { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ },
       { test: /\.json?$/, loader: 'json' },
       { test: /\.css$/, loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]' },
-      { test: /\.less$/, loader: "style!css!less" }
+      { test: /\.less$/, loader: "style!css!less" },
+      { test: /\.gif$/, loader: "url-loader?mimetype=image/png" }, 
+      { test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/, loader: "url-loader?mimetype=application/font-woff" }, 
+      { test: /\.(ttf|eot|svg)(\?v=[0-9].[0-9].[0-9])?$/, loader: "file-loader?name=[name].[ext]" }
     ]
   },
   plugins: [

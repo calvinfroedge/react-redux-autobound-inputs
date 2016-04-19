@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-workbench",
-  "version": "0.0.2",
-  "description": "Get your react + redux components off the ground faster",
+  "name": "react-redux-autobound-inputs",
+  "version": "0.0.1",
+  "description": "Two way data binding with edit and view mode for input controls",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
   "scripts": {
