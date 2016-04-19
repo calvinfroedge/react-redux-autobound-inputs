@@ -1,7 +1,7 @@
 import React from 'react'
 import { modes } from '../constants'
 import { passPropsExcept, mixin } from 'react-component-helpers'
-import ModeMixin from './mixins/mode'
+import { ActionMixin, ModeMixin} from './mixins'
 import { createAction } from 'redux-actions'
 import propTypes from './props/types'
 
@@ -16,7 +16,7 @@ class DateTime extends React.Component {
   constructor(props){
     super(props);
 
-    mixin(this, ModeMixin);
+    mixin(this, ModeMixin, ActionMixin);
   }
 
   componentDidUpdate(){
@@ -24,13 +24,7 @@ class DateTime extends React.Component {
   }
 
   onChange(value){
-    let { props } = this;
-    let { dispatch } = props;
-
-    let action = createAction(props.action);
-    let toDispatch = action(value);
-    dispatch(toDispatch);
-    this.toggleMode();
+    ::this.dispatchAction(value);
   }
 
   onBlur(){

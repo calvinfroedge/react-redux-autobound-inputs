@@ -1,9 +1,9 @@
 import React from 'react'
 
-let { string, object, func, any } = React.PropTypes;
+let { string, object, func, any, oneOfType } = React.PropTypes;
 
 export default {
-  action: string.isRequired,
+  action: oneOfType([string, func]),
   dispatch: func.isRequired,
   value: any,
 }

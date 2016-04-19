@@ -2,15 +2,14 @@ import React from 'react'
 import { modes } from '../constants'
 import { Input as RBSInput } from 'react-bootstrap'
 import { passPropsExcept, mixin } from 'react-component-helpers'
-import { createAction } from 'redux-actions'
-import ModeMixin from './mixins/mode'
+import { ActionMixin, ModeMixin} from './mixins'
 import propTypes from './props/types'
 
 class Input extends React.Component {
   constructor(props){
     super(props);
 
-    mixin(this, ModeMixin);
+    mixin(this, ModeMixin, ActionMixin);
   }
 
   componentDidUpdate(){
@@ -19,13 +18,9 @@ class Input extends React.Component {
 
   onBlur(event){
     let { props } = this;
-    let { dispatch } = props;
     let { value } = event.target;
 
-    let action = createAction(props.action);
-    let toDispatch = action(value);
-    dispatch(toDispatch);
-    this.toggleMode();
+    ::this.dispatchAction(value);
   }
 
   renderEdit(){

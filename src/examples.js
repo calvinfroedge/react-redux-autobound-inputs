@@ -1,10 +1,17 @@
 import React from 'react'
 import { Input, DateTime } from './inputs'
 import { connect } from 'react-redux'
+import { createAction } from 'redux-actions'
 
 class Examples extends React.Component {
   constructor(props){
     super(props);
+  }
+
+  updateNestedArrayItem(index, key, value){
+    let action = createAction('target_nested');
+
+    return action({index, key, value});
   }
 
   render(){
@@ -15,6 +22,8 @@ class Examples extends React.Component {
       <div className="container">
         <h2>Text input</h2>
         <Input type="text" action="text_update" dispatch={dispatch} value={sample.sample_text} />
+        <h2>Text input (in nested array)</h2>
+        <Input type="text" action={this.updateNestedArrayItem.bind(this, 0, 'foo')} dispatch={dispatch} value={sample.nested_array[0].foo} />
         <h2>Textarea input</h2>
         <Input type="textarea" action="textarea_update" dispatch={dispatch} value={sample.sample_textarea} />
         <h2>Date input</h2>
