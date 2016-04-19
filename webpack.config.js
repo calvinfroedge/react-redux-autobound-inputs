@@ -28,7 +28,7 @@ var config = {
 
 if(env === 'build'){
   config.output = {
-    library: 'ReactReduxWorkbench',
+    library: 'ReactReduxAutoboundInputs',
     libraryTarget: 'umd'
   }
 } else if(env === 'development'){
@@ -41,7 +41,7 @@ if(env === 'build'){
 
   config.output = {
     path: path.join(__dirname, '/dist/'),
-    filename: 'react-redux-workbench.js',
+    filename: 'react-redux-autobound-inputs.js',
     publicPath: '/'
   };
 
