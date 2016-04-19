@@ -1,4 +1,0 @@
-*.sw*
-.gitconfig
-.package.json
-.webpack.config.js
