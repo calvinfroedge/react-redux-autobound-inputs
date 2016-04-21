@@ -21,11 +21,11 @@ export default {
   },
 
   render(){
-    let { mode } = this.state;
+    let { mode, props } = this.state;
 
-    return <div>
-      <div style={{display: (mode == modes.edit ? 'block' : 'none')}}>{::this.renderEdit()}</div>
-      <div style={{display: (mode == modes.view ? 'block' : 'none')}}>{::this.renderView()}</div>
+    return <div className={["autobound-input", props.className].join(' ')}>
+      <div className="autobound-input-edit" style={{display: (mode == modes.edit ? 'block' : 'none')}}>{::this.renderEdit()}</div>
+      <div className="autobound-input-view" style={{display: (mode == modes.view ? 'block' : 'none')}}>{::this.renderView()}</div>
     </div>
   }
 }
