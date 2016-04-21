@@ -21,7 +21,8 @@ export default {
   },
 
   render(){
-    let { mode, props } = this.state;
+    let { state, props } = this;
+    let { mode } = state;
 
     return <div className={["autobound-input", props.className].join(' ')}>
       <div className="autobound-input-edit" style={{display: (mode == modes.edit ? 'block' : 'none')}}>{::this.renderEdit()}</div>
