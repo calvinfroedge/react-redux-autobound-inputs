@@ -16,6 +16,10 @@ The redux action dispatched will have the elements new value as its payload. It 
 
 Work in progress! More inputs and tests coming soon.
 
+# Props
+
+- readOnly: Pass readOnly to allow disable mode toggle
+
 # Playing around
 
 Clone, install, and run `npm run development` to use the input playground.

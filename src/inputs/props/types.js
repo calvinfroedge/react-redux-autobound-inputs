@@ -4,6 +4,6 @@ let { string, object, func, any, oneOfType } = React.PropTypes;
 
 export default {
   action: oneOfType([string, func]),
-  dispatch: func.isRequired,
+  dispatch: func,
   value: any,
 }

@@ -22,6 +22,8 @@ class Examples extends React.Component {
       <div className="container">
         <h2>Text input</h2>
         <Input type="text" action="text_update" dispatch={dispatch} value={sample.sample_text} />
+        <h2>Text input (read only)</h2>
+        <Input type="text" readOnly value="Look but don't touch!" />
         <h2>Text input (in nested array)</h2>
         <Input type="text" action={this.updateNestedArrayItem.bind(this, 0, 'foo')} dispatch={dispatch} value={sample.nested_array[0].foo} />
         <h2>Textarea input</h2>

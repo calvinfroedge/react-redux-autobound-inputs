@@ -1,6 +1,6 @@
 {
   "name": "react-redux-autobound-inputs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Two way data binding with edit and view mode for input controls",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
