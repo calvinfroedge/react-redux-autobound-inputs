@@ -16,7 +16,13 @@ export default {
   },
 
   toggler(component){
-    let { readOnly } = this.props;
+    let { props } = this;
+    let { readOnly } = props;
+    let { toggleMode } = this;
+    let onClick = (event)=>{
+      toggleMode();
+      if(props.onClick) props.onClick(event);
+    }
 
     return readOnly ? component : <div className="autobound-mode-toggle" style={{cursor: 'pointer'}} onClick={::this.toggleMode}>
       {component}
