@@ -24,7 +24,7 @@ export default {
       if(props.onClick) props.onClick(event);
     }
 
-    return readOnly ? component : <div className="autobound-mode-toggle" style={{cursor: 'pointer'}} onClick={::this.toggleMode}>
+    return readOnly ? component : <div className="autobound-mode-toggle" style={{cursor: 'pointer'}} onClick={onClick}>
       {component}
     </div>
   },
